@@ -47,22 +47,20 @@
 }
 
 :root {
-  --color-primary: #0c0c0e;      /* page background */
-  --color-secondary: #babac4;    /* body text */
-  --color-foreground: #d6d6dc;   /* brighter text */
-  --color-background: #f3f1f1;    /* headings / light text */
-  --color-panel: #abb8c3;        /* blue-grey hero panel */
-  --color-accent: #cf2e2e;       /* red button */
-  --color-panel-ink: #0c0c0e;    /* text on the panel */
+  --color-bg: #0c0c0e;          /* page background */
+  --color-text: #babac4;        /* body text on dark */
+  --color-heading: #f3f1f1;     /* headings / bright text on dark */
+  --color-panel: #abb8c3;       /* blue-grey hero panel */
+  --color-panel-text: #14161a;  /* text on the panel */
+  --color-panel-muted: #55606c; /* muted text on the panel */
+  --color-accent: #cf2e2e;      /* red button */
 
   --font-base: "Haskoy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-heading: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 
-  --content-width: 760px;
-  --wide-width: 1200px;
-  --gutter: 1rem;
+  --container: 760px;
 }
 
 *,
@@ -78,12 +76,13 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-base);
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -94,152 +93,173 @@ img {
 }
 
 a {
-  color: var(--color-foreground);
+  color: var(--color-heading);
   text-underline-offset: 0.15em;
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: var(--font-heading);
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--color-background);
-  letter-spacing: 0;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--color-heading);
 }
 
 h2 {
-  font-size: clamp(1.9rem, 1.3rem + 2.6vw, 2.75rem);
-  margin: 1rem 0 0.75rem;
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 2.9rem);
+  margin: 0.5rem 0 1rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
 }
 
 strong {
-  color: var(--color-foreground);
+  font-weight: 700;
+}
+
+ul {
+  margin: 1.1rem 0;
+  padding-left: 1.35rem;
+}
+
+li {
+  margin: 0.45rem 0;
 }
 
 hr {
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 3rem 0;
 }
 
 /* --------------------------------------------------------------------------
-   Layout wrappers
+   Layout container
    -------------------------------------------------------------------------- */
 
-.wrap {
+.container {
   width: 100%;
-  max-width: var(--content-width);
+  max-width: var(--container);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: 20px;
 }
 
+/* --------------------------------------------------------------------------
+   Header + tagline
+   -------------------------------------------------------------------------- */
+
 .site-header {
-  padding: 1.25rem var(--gutter);
-  text-align: center;
+  padding: 1.25rem 0 0.25rem;
 }
 
 .site-header a {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  color: var(--color-background);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-heading);
   text-decoration: none;
 }
 
-.site-main {
-  padding-block: 1rem 3rem;
+main {
+  padding-bottom: 3rem;
 }
 
-.intro {
-  margin: 0 0 1.5rem;
+.tagline {
+  margin: 1.5rem 0 1.75rem;
+  color: var(--color-text);
 }
 
 /* --------------------------------------------------------------------------
-   Hero panel (the blue-grey card)
+   Hero panel (blue-grey band, full width)
    -------------------------------------------------------------------------- */
 
 .hero {
   background-color: var(--color-panel);
-  color: var(--color-panel-ink);
-  padding-block: 3.5vw;
-  margin-inline: calc(50% - 50vw); /* break out to full viewport width */
-  padding-inline: calc(50vw - 50% + var(--gutter));
-}
-
-.hero > * {
-  max-width: var(--content-width);
-  margin-inline: auto;
-}
-
-.hero a {
-  color: var(--color-panel-ink);
+  color: var(--color-panel-text);
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .hero p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.1rem;
 }
 
-.hero .centered {
+.hero-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-logo {
+  width: min(330px, 46%);
+}
+
+.hero-portrait {
+  width: min(300px, 46%);
+}
+
+.hero-cta {
   text-align: center;
+  margin: 1.5rem 0;
 }
 
-.hero-figures::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.hero-figures .logo {
-  float: left;
-  width: min(339px, 45%);
-  margin: 0 1.25rem 0.75rem 0;
-}
-
-.hero-figures .portrait {
-  float: right;
-  width: min(335px, 45%);
-  margin: 0 0 0.75rem 1.25rem;
-}
-
-.hero h2 {
+.hero-headline {
   color: #000;
   text-align: center;
-  margin-top: 1.5rem;
+  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 2.7rem);
+  margin: 1.25rem 0 1.5rem;
 }
 
-.hero .wide-image {
+.hero-wide {
   display: block;
   width: 100%;
   margin: 1.5rem 0;
 }
 
-.hero ul {
-  margin: 1rem 0;
-  padding-left: 1.25rem;
+.hero-copy {
+  text-align: center;
 }
 
-.hero li {
-  margin: 0.35rem 0;
-}
-
-.hero .medium {
+.hero-lead {
   font-size: 1.05rem;
+  color: var(--color-panel-muted);
+  margin-top: 1.75rem;
 }
 
-/* Buttons ----------------------------------------------------------------- */
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin: 1.25rem 0;
+.hero-list {
+  color: var(--color-panel-text);
 }
+
+/* Gallery: 3-column grid of portrait crops */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
 
 .btn {
   display: inline-block;
-  padding: 0.7em 1.4em;
+  padding: 0.8em 1.6em;
+  border: 0;
   border-radius: 0;
   font-family: var(--font-base);
   font-size: 1rem;
@@ -248,7 +268,6 @@ hr {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border: 0;
 }
 
 .btn--red {
@@ -257,8 +276,8 @@ hr {
 }
 
 .btn--dark {
-  background-color: var(--color-primary);
-  color: var(--color-background);
+  background-color: var(--color-bg);
+  color: var(--color-heading);
 }
 
 .btn--red:hover,
@@ -266,61 +285,18 @@ hr {
   opacity: 0.9;
 }
 
-/* Gallery --------------------------------------------------------------- */
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.5rem 0 0;
-}
-
-.gallery figure {
-  flex: 1 1 0;
-  min-width: 120px;
-  margin: 0;
-}
-
-.gallery img {
-  display: block;
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-
-/* --------------------------------------------------------------------------
-   Body sections after the hero
-   -------------------------------------------------------------------------- */
-
-.section {
-  margin-top: 1.75rem;
-}
-
-.section p {
-  margin: 0 0 1rem;
-}
-
-.section ul {
-  margin: 1rem 0;
-  padding-left: 1.25rem;
-}
-
-.section li {
-  margin: 0.4rem 0;
-}
-
 /* --------------------------------------------------------------------------
    Contact form (replaces the old mailto link)
    -------------------------------------------------------------------------- */
 
 .contact {
-  margin-top: 1rem;
+  scroll-margin-top: 1.5rem;
 }
 
 .contact-form {
   display: grid;
   gap: 1rem;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .field {
@@ -330,16 +306,16 @@ hr {
 
 .field label {
   font-size: 0.95rem;
-  color: var(--color-foreground);
+  color: var(--color-heading);
 }
 
 .field input,
 .field textarea {
   font-family: var(--font-base);
   font-size: 1rem;
-  color: var(--color-background);
+  color: var(--color-heading);
   background-color: #17171a;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 4px;
   padding: 0.65rem 0.75rem;
   width: 100%;
@@ -387,7 +363,7 @@ hr {
 
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 2rem var(--gutter) 3rem;
+  padding: 2rem 0 3rem;
   text-align: center;
   font-size: 0.9rem;
   color: #8a8a94;
@@ -413,24 +389,17 @@ hr {
    Responsive
    -------------------------------------------------------------------------- */
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   body {
     font-size: 1.0625rem;
   }
 
-  .hero-figures .logo,
-  .hero-figures .portrait {
-    float: none;
-    display: block;
-    width: 70%;
-    margin: 0.75rem auto;
+  .hero-logo,
+  .hero-portrait {
+    width: 78%;
   }
 
-  .gallery img {
-    height: 160px;
-  }
-
-  .gallery figure {
-    flex-basis: 30%;
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

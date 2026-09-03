@@ -21,71 +21,79 @@
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="preload" as="font" type="font/woff2" href="/fonts/haskoy-400.woff2" crossorigin />
-<link rel="preload" as="font" type="font/woff2" href="/fonts/rubik-400.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/fonts/rubik-700.woff2" crossorigin />
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 
 <header class="site-header">
-  <a href="/">doortodelicious</a>
+  <div class="container">
+    <a href="/">doortodelicious</a>
+  </div>
 </header>
 
-<main class="site-main">
-  <div class="wrap">
+<main>
+  <div class="container">
+    <p class="tagline">Your Independent Thermomix® Consultant in Door County, Wisconsin</p>
+  </div>
 
-    <p class="intro">Your Independent Thermomix® Consultant in Door County, Wisconsin</p>
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
 
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-figures">
+      <div class="hero-top">
         <img
-          class="logo"
+          class="hero-logo"
           src="/assets/logo.png"
           width="752"
           height="758"
-          alt="Door to Delicious logo"
+          alt="Door to Delicious — Thermomix® Independent Consultant, Door County, Wisconsin"
         />
         <img
-          class="portrait"
+          class="hero-portrait"
           src="/assets/thermomix.jpg"
           width="553"
           height="983"
-          alt="Karen with her Thermomix®"
+          alt="Thermomix® TM7 — it actually cooks for you"
         />
-
-        <div class="buttons">
-          <a class="btn btn--red" href="https://shop.thermomix.com/consultant/109102" target="_blank" rel="noopener">
-            My Link to Cooking Magic
-          </a>
-        </div>
-
-        <h2 id="hero-heading">Learn how to Cook Faster. Cheaper. Healthier…and Tastier!</h2>
       </div>
 
+      <p class="hero-cta">
+        <a class="btn btn--red" href="https://shop.thermomix.com/consultant/109102" target="_blank" rel="noopener">
+          My Link to Cooking Magic
+        </a>
+      </p>
+
+      <h2 id="hero-heading" class="hero-headline">
+        Learn how to Cook Faster. Cheaper. Healthier...and Tastier!
+      </h2>
+
       <img
-        class="wide-image"
+        class="hero-wide"
         src="/assets/beef-bulgogi.jpg"
         width="737"
         height="983"
         alt="Beef bulgogi bowl made with a Thermomix®"
       />
 
-      <p class="centered">
-        I found joy in cooking again (and with functionality I never knew existed)
-        once I began cooking with a Thermomix® while living in Germany.
-      </p>
-      <p class="centered">Now, I am excited to bring the magic and joy to those in the US!</p>
-      <p class="centered">
-        I would love to show you how cooking with Thermomix® really is like cooking
-        with magic. Whether in-person or online, contact me to set up your personal
-        cooking experience.
-      </p>
-
-      <div class="buttons">
-        <a class="btn btn--dark" href="#contact">Schedule a Demo</a>
+      <div class="hero-copy">
+        <p>
+          I found joy in cooking again (and with functionality I never knew existed)
+          once I began cooking with a Thermomix® while living in Germany.
+        </p>
+        <p>Now, I am excited to bring the magic and joy to those in the US!</p>
+        <p>
+          I would love to show you how cooking with Thermomix® really is like cooking
+          with magic. Whether in-person or online, contact me to set up your personal
+          cooking experience.
+        </p>
       </div>
 
-      <p class="medium"><strong>Discover the Magic! A Thermomix® TM7 can:</strong></p>
-      <ul>
+      <p class="hero-cta">
+        <a class="btn btn--dark" href="#contact">Schedule a Demo</a>
+      </p>
+
+      <p class="hero-lead"><strong>Discover the Magic! A Thermomix® TM7 can:</strong></p>
+      <ul class="hero-list">
         <li>Make fresh bread dough in minutes</li>
         <li>Grind your own fresh meats</li>
         <li>Steam a chicken vegetable fried rice…all in 1 step!</li>
@@ -96,17 +104,21 @@
       </ul>
 
       <div class="gallery">
-        <figure><img src="/assets/beef-bulgogi.jpg" alt="Beef bulgogi" loading="lazy" /></figure>
-        <figure><img src="/assets/fresh-bread.jpg" alt="Freshly baked bread" loading="lazy" /></figure>
-        <figure><img src="/assets/popovers.jpg" alt="Popovers" loading="lazy" /></figure>
-        <figure><img src="/assets/shrimp-quinoa.jpg" alt="Shrimp and quinoa" loading="lazy" /></figure>
-        <figure><img src="/assets/stuffed-peppers.jpg" alt="Stuffed peppers" loading="lazy" /></figure>
+        <figure><img src="/assets/beef-bulgogi.jpg" alt="Beef bulgogi over rice" loading="lazy" /></figure>
+        <figure><img src="/assets/fresh-bread.jpg" alt="Freshly baked loaf of bread" loading="lazy" /></figure>
+        <figure><img src="/assets/popovers.jpg" alt="Golden popovers on a baking tray" loading="lazy" /></figure>
+        <figure><img src="/assets/shrimp-quinoa.jpg" alt="Shrimp and quinoa bowl with avocado" loading="lazy" /></figure>
+        <figure><img src="/assets/stuffed-peppers.jpg" alt="Baked stuffed peppers" loading="lazy" /></figure>
       </div>
-    </section>
+
+    </div>
+  </section>
+
+  <div class="container">
 
     <hr />
 
-    <section class="section" aria-labelledby="why-heading">
+    <section aria-labelledby="why-heading">
       <h2 id="why-heading">Why should I buy my Thermomix® through a Consultant?</h2>
       <p>
         Buying a Thermomix® through a Consultant comes with more than just a great
@@ -136,7 +148,7 @@
 
     <hr />
 
-    <section class="section" aria-labelledby="about-heading">
+    <section aria-labelledby="about-heading">
       <h2 id="about-heading">About me:</h2>
       <p>
         My name is Karen and I have been an Independent Thermomix® Consultant both in
@@ -155,7 +167,7 @@
 
     <hr />
 
-    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Schedule a Demo</h2>
       <p>
         Tell me a little about what you’re looking for and I’ll be in touch to set up
@@ -199,15 +211,17 @@
 </main>
 
 <footer class="site-footer">
-  <p>© <span id="year">2026</span> doortodelicious · Karen, Independent Thermomix® Consultant · Door County, Wisconsin</p>
-  <p><a href="https://shop.thermomix.com/consultant/109102" target="_blank" rel="noopener">Order your Thermomix®</a></p>
-  <p class="disclaimer">
-    This is the independent website of Karen, an Independent Thermomix® Consultant.
-    It is not operated, endorsed, or sponsored by Vorwerk LLC, and its content does
-    not represent the official position of Vorwerk. Thermomix® is a registered
-    trademark of Vorwerk International &amp; Co. KmG. All product orders and payments
-    are processed directly by Vorwerk LLC through the official Thermomix® shop.
-  </p>
+  <div class="container">
+    <p>© <span id="year">2026</span> doortodelicious · Karen, Independent Thermomix® Consultant · Door County, Wisconsin</p>
+    <p><a href="https://shop.thermomix.com/consultant/109102" target="_blank" rel="noopener">Order your Thermomix®</a></p>
+    <p class="disclaimer">
+      This is the independent website of Karen, an Independent Thermomix® Consultant.
+      It is not operated, endorsed, or sponsored by Vorwerk LLC, and its content does
+      not represent the official position of Vorwerk. Thermomix® is a registered
+      trademark of Vorwerk International &amp; Co. KmG. All product orders and payments
+      are processed directly by Vorwerk LLC through the official Thermomix® shop.
+    </p>
+  </div>
 </footer>
 
 <script>
