@@ -51,14 +51,21 @@ public/            <- everything that gets deployed (Worker assets directory)
   robots.txt
   sitemap.xml
   _headers         <- headers (security + caching)
-  favicon.ico
-  assets/          <- images (logo, food photos)
+  favicon.ico      <- 16/32/48 in one .ico; also favicon-32.png, apple-touch-icon.png
+  assets/          <- images (logo, portrait, food photos)
   fonts/           <- self-hosted woff2: Playfair + Inter (/), Haskoy + Rubik (/original/)
 ```
 
 `assets/logo-mark.png` (376×379, 71 KB) is the web copy of the seal used on `/`;
 `assets/logo.png` (752×758, 825 KB) is the full-resolution master, referenced only
 from the JSON-LD.
+
+The favicons are generated from that master too: the capital **D** of "Door" is
+lifted straight out of the wordmark (bbox `x 116–205, y 300–386`) and set in cream
+on a cherry disc. The full seal is illegible below about 64 px, so the letter stands
+in for it. `favicon.ico` bundles 16/32/48 as PNG-in-ICO. Regenerating them needs the
+throwaway script approach in the commit history — there is no image tooling on the
+build box.
 
 ## Local preview
 
