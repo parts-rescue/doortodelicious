@@ -43,9 +43,10 @@ attached after the site is approved — nameservers are not moved before then.
 
 ## Contact form
 
-Uses [Web3Forms](https://web3forms.com/) (no backend). Replace
-`YOUR_WEB3FORMS_ACCESS_KEY` in `public/index.html` with the access key emailed to
-`doortodelicious@gmail.com` after creating it at web3forms.com.
+Uses [Web3Forms](https://web3forms.com/) (no backend). The access key lives in the
+hidden `access_key` field in `public/index.html`. The recipient address is
+configured in the Web3Forms dashboard for that form — set it to an inbox Karen
+checks and verify it there.
 
 ## Follow-ups
 
