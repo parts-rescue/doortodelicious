@@ -399,6 +399,28 @@ main {
 }
 
 /* --------------------------------------------------------------------------
+   Preview bar (comparison only — remove before launch)
+   -------------------------------------------------------------------------- */
+
+.preview-bar {
+  background: #17171a;
+  color: #d9d9de;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.55rem 1rem;
+}
+
+.preview-bar a {
+  color: #fff;
+  margin: 0 0.4rem;
+}
+
+.preview-bar strong {
+  color: #fff;
+  margin: 0 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
 

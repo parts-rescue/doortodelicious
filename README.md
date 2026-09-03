@@ -5,16 +5,29 @@ Karen, an Independent Thermomix® Consultant in Door County, Wisconsin. Rebuilt
 from the original WordPress.com site as plain static HTML/CSS for Cloudflare Pages.
 No backend; the old `mailto:` link is replaced with a contact form.
 
+## Two versions (comparison phase)
+
+- **`/`** — recommended version: light theme, reworked layout. `index.html` + `styles.css`.
+- **`/original/`** — "original style": mirrors the live dark site as closely as
+  possible, with only the Thermomix-required changes (see `docs/thermomix-compliance.md`).
+  `original/index.html` + `styles-original.css`. `noindex`.
+
+A `.preview-bar` at the top of each links to the other. Once Karen picks one,
+delete the loser plus the preview bar.
+
 ## Structure
 
 ```
-public/            <- everything that gets deployed (Pages output directory)
-  index.html       <- the single page
-  404.html
+public/            <- everything that gets deployed (Worker assets directory)
+  index.html       <- recommended version (light)
   styles.css
+  original/
+    index.html     <- original-style version (dark)
+  styles-original.css
+  404.html
   robots.txt
   sitemap.xml
-  _headers         <- Cloudflare Pages headers (security + caching)
+  _headers         <- headers (security + caching)
   favicon.ico
   assets/          <- images (logo, portrait, food photos)
   fonts/           <- self-hosted Haskoy (body) + Rubik (headings) woff2
