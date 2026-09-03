@@ -7,7 +7,10 @@ No backend; the old `mailto:` link is replaced with a contact form.
 
 ## Two versions (comparison phase)
 
-- **`/`** — recommended version: light theme, reworked layout. `index.html` + `styles.css`.
+- **`/`** — recommended version: full landing page (sticky nav, hero, feature grid,
+  consultant perks, Meet Karen, demo scheduler, FAQ accordion, footer). Warm culinary
+  aesthetic — cream/charcoal/terracotta/sage, Playfair Display + Inter (self-hosted).
+  `index.html` + `styles.css`. Hand-written CSS, no framework.
 - **`/original/`** — "original style": mirrors the live dark site as closely as
   possible, with only the Thermomix-required changes (see `docs/thermomix-compliance.md`).
   `original/index.html` + `styles-original.css`. `noindex`.
