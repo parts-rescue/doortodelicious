@@ -92,9 +92,9 @@ if in doubt, don't post it.
 - **Images:** the hero is now **Karen's own consultant seal** (`assets/logo-mark.png`,
   a size-optimised copy of `assets/logo.png`) — no Thermomix marketing creative is used
   on this page. The four food photos are Karen's own. `assets/thermomix.jpg` is still
-  unused on `/` (see Cannot #4). "About Karen" is text-only; an HTML comment in
-  `public/index.html` shows where to add a portrait at `/assets/karen.jpg` when Karen
-  supplies one. Do not substitute a Thermomix marketing image for it.
+  unused on `/` (see Cannot #4). "About Karen" now carries Karen's own portrait
+  (`assets/karen.jpg`, supplied by Karen). **Action for Karen:** confirm she is happy
+  for that specific photo to be published on the public site.
 - **"3+ years as a Consultant"** appears in the hero and in About. Confirm this is still
   accurate; it carries over from the original site's "over 3 years".
 - **Cookidoo®** is referenced (guided cooking). Fine as a real Vorwerk product;

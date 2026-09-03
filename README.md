@@ -98,5 +98,7 @@ checks and verify it there.
   available. They are lazy-loaded, so the initial page load is ~210 KB.
 - `public/assets/logo.png` (825 KB) is kept as the master. The site loads
   `logo-mark.png` instead; re-export both as WebP when tooling allows.
-- Karen's portrait: drop it at `public/assets/karen.jpg` and follow the comment in
-  the "About Karen" section of `public/index.html`.
+- Karen's portrait (`public/assets/karen.jpg`, 960×958, 119 KB) is in place in the
+  "About Karen" section. It is square and her face sits up and left of centre, so
+  `.portrait img` scales to 118% and offsets to recentre her in the circle — redo
+  that offset if the photo is ever swapped.

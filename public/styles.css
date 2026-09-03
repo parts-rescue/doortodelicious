@@ -479,6 +479,25 @@ p:last-child {
   margin-bottom: 1.5rem;
 }
 
+/* Circular portrait, ringed to match the hero seal. The photo is square and
+   Karen sits slightly up and left of centre, so the image is scaled a little
+   and nudged to bring her face to the middle of the circle. */
+.portrait {
+  width: min(240px, 58vw);
+  aspect-ratio: 1;
+  margin: 0 auto clamp(1.75rem, 3.5vw, 2.5rem);
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(29, 90, 56, 0.16);
+}
+
+.portrait img {
+  width: 118%;
+  height: 118%;
+  margin: -4.5% 0 0 -2%;
+  object-fit: cover;
+}
+
 .pull-quote {
   margin: clamp(2rem, 4vw, 2.75rem) 0 0;
   padding-top: clamp(2rem, 4vw, 2.75rem);
