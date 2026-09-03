@@ -27,19 +27,22 @@ cd public && python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Deploy (Cloudflare Pages — Git integration)
+## Deploy (Cloudflare Workers — static assets, Git integration)
 
-Connect the GitHub repo `parts-rescue/doortodelicious` to a Cloudflare Pages
-project:
+Deployed as an assets-only Cloudflare Worker via Workers Builds. Config is
+`wrangler.jsonc` (`assets.directory` = `./public`). The Git connection runs
+`npx wrangler deploy` on every push to `main`.
 
-- **Production branch:** `main`
-- **Framework preset:** None
-- **Build command:** *(leave empty)*
-- **Build output directory:** `public`
+- **Repo:** `parts-rescue/doortodelicious`, branch `main`
+- **Build command:** none · **Deploy command:** `npx wrangler deploy` · **Root:** `/`
 
-Every push to `main` builds and deploys automatically. The test URL is
-`https://<project>.pages.dev`. The custom domain (`doortodelicious.com`) is only
-attached after the site is approved — nameservers are not moved before then.
+Test URL: enable `workers.dev` under the Worker's **Settings → Domains & Routes**
+to get `https://doortodelicious.<subdomain>.workers.dev`. The custom domain
+(`doortodelicious.com`) is only attached after the site is approved — nameservers
+are not moved before then.
+
+Local check: `npx wrangler dev` (serves `public/`), or just
+`cd public && python3 -m http.server`.
 
 ## Contact form
 
