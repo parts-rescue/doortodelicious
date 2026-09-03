@@ -68,7 +68,7 @@ if in doubt, don't post it.
 | Cheat Sheet rule | Application to the site | Status / action |
 | --- | --- | --- |
 | **Cannot #4 — brand images without authorization** | The hero "portrait" image (`public/assets/thermomix.jpg`) is a **Thermomix marketing creative** ("It actually cooks for you", product shot, thermomix logo), carried over from the old site. | ⚠️ **Action for Karen:** confirm this is an approved consultant/national-offer visual. If it is not on the approved-assets list, replace it with one of Karen's own photos. Same check for `assets/logo.png` (Karen's own consultant logo — should be fine, but confirm it was provided/approved). |
-| **Cannot #5 — personalized incentives to attract a Customer** | Old site said "**A $50 gift card exclusively when you order through my consultant link**" — a personalized incentive. A later redesign brief (from Gemini) asked to re-add a "$50 Exclusive Gift Card … through Karen's consultant link" badge + "Order with Exclusive Perks" CTA. **Not implemented.** | ⚠️ The recommended page (`/`) describes only "the current factory promotion" and "the official accessory voucher awarded when you choose a Consultant" — no dollar figure, no "exclusive through my link", CTA is "See Current Offers". **Action for Karen:** confirm with her Branch Manager that the voucher and "white-glove welcome & setup" wording describe the standard offer / normal consultant service. |
+| **Cannot #5 — personalized incentives to attract a Customer** | Old site said "**A $50 gift card exclusively when you order through my consultant link**" — a personalized incentive. A later redesign brief (from Gemini) asked to re-add a "$50 Exclusive Gift Card … through Karen's consultant link" badge + "Order with Exclusive Perks" CTA. **Not implemented.** | ⚠️ The recommended page (`/`) describes only "whatever promotion is running" and "the official accessory voucher awarded when you choose a Consultant with your order" — no dollar figure, no "exclusive through my link"; the CTA is "Visit the official shop". **Action for Karen:** confirm with her Branch Manager that the voucher and the "a welcome and first cook" wording describe the standard offer / normal consultant service. |
 | **Cannot #6 — income / lifestyle / earnings claims** | The site sells consultation services to buyers; it does **not** recruit consultants and makes no earnings claims. | ✅ Compliant. Keep it that way — no "join my team" / "financial freedom" / earnings content. |
 | **Cannot #3 & #10 — paid ads / self-made national-offer assets** | The site is an organic personal-branding page, not paid advertising. No homemade graphics promoting financing or bundle offers. | ✅ Compliant. Do not add DIY banners for 0% APR, "Exclusive Bundle", price promos, etc. National-offer promotion uses approved visuals only. |
 | **Cannot #8 — publishing AI content as-is** | This site's structure and some copy (contact-form intro, meta descriptions, alt text, footer disclaimer wording) were drafted with AI assistance. Karen's own words from the old site were preserved. | ⚠️ **Action for Karen:** read every line of `public/index.html` and approve it as her own voice **before** the domain is pointed here. This is the human review the rule requires. |
@@ -80,20 +80,28 @@ if in doubt, don't post it.
 
 ## §3a — Open items for Karen to confirm (recommended page `/`)
 
-- **Surname in public:** the page now uses "Karen Skarda" (from the redesign brief).
-  Confirm she wants her full name on the site.
-- **Disclaimer wording / trademark holder:** footer reads "Thermomix® and Cookidoo®
-  are registered trademarks of Vorwerk. … not published by, endorsed by, or directly
-  affiliated with Vorwerk LLC." Confirm the exact entity name Thermomix wants
-  (Vorwerk / Vorwerk LLC / Vorwerk SE & Co. KG) against her current consultant agreement.
+- **Name in public:** resolved — the page uses "Karen" only, as the original site did.
+  No surname anywhere on `/`.
+- **Disclaimer wording / trademark holder:** resolved — `/` now carries the same
+  footer disclaimer as `/original/` (independent site, not operated/endorsed/sponsored
+  by **Vorwerk LLC**, trademark credited to **Vorwerk International & Co. KmG**, orders
+  and payments processed by Vorwerk LLC). Karen should still check that entity naming
+  against her current consultant agreement.
 - **Model name:** page and FAQ say "the current flagship is the Thermomix® TM7."
   Confirm that matches current US availability.
-- **Images:** hero and "Meet Karen" use placeholders (a food photo + a "photo coming
-  soon" block). Karen should supply her own lifestyle/kitchen photo and a portrait.
-  Do not substitute Thermomix marketing creatives (`assets/thermomix.jpg` is not used
-  on this page — see Cannot #4).
-- **Cookidoo®** is now referenced (guided cooking). Fine as a real Vorwerk product;
+- **Images:** the hero is now **Karen's own consultant seal** (`assets/logo-mark.png`,
+  a size-optimised copy of `assets/logo.png`) — no Thermomix marketing creative is used
+  on this page. The four food photos are Karen's own. `assets/thermomix.jpg` is still
+  unused on `/` (see Cannot #4). "About Karen" is text-only; an HTML comment in
+  `public/index.html` shows where to add a portrait at `/assets/karen.jpg` when Karen
+  supplies one. Do not substitute a Thermomix marketing image for it.
+- **"3+ years as a Consultant"** appears in the hero and in About. Confirm this is still
+  accurate; it carries over from the original site's "over 3 years".
+- **Cookidoo®** is referenced (guided cooking). Fine as a real Vorwerk product;
   keep the ® and the trademark line.
+- **Structured data:** `/` includes JSON-LD (`ProfessionalService` + `FAQPage`) that
+  restates the FAQ answers. If the FAQ copy changes, change the JSON-LD to match —
+  it is public-facing content and needs the same approval.
 
 ## §4 — Standing rules for future edits
 

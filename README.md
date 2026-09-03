@@ -7,9 +7,8 @@ No backend; the old `mailto:` link is replaced with a contact form.
 
 ## Two versions (comparison phase)
 
-- **`/`** — recommended version: full landing page (sticky nav, hero, feature grid,
-  consultant perks, Meet Karen, demo scheduler, FAQ accordion, footer). Warm culinary
-  aesthetic — cream/charcoal/terracotta/sage, Playfair Display + Inter (self-hosted).
+- **`/`** — recommended version: single page — sticky masthead, hero, what it does
+  (+ photo strip), why a Consultant, About Karen, booking form, FAQ, footer.
   `index.html` + `styles.css`. Hand-written CSS, no framework.
 - **`/original/`** — "original style": mirrors the live dark site as closely as
   possible, with only the Thermomix-required changes (see `docs/thermomix-compliance.md`).
@@ -17,6 +16,27 @@ No backend; the old `mailto:` link is replaced with a contact form.
 
 A `.preview-bar` at the top of each links to the other. Once Karen picks one,
 delete the loser plus the preview bar.
+
+## Design system (recommended version)
+
+Everything is derived from Karen's own consultant seal, `assets/logo.png` — a
+circular stamp with arced lettering, drawn in two inks on warm paper. All three
+colours below are sampled straight out of that file:
+
+| Token | Value | Role |
+| --- | --- | --- |
+| `--cherry` | `#a82334` | Action only — buttons, links |
+| `--pine` | `#1d5a38` | Structure only — eyebrows, rules, checks, footer |
+| `--paper-warm` | `#f9f8f4` | Alternating section bands (the seal's own paper) |
+
+Two recurring devices carry the identity: the **seam** (two hairlines 3px apart at
+the top of each band, echoing the seal's concentric rings) and **letterspaced caps**
+in pine (the arced seal lettering, straightened). Type is Playfair Display for
+display only — it matches the wordmark's high-contrast serif — with Inter for
+everything else. Both are self-hosted variable woff2.
+
+The seal itself is the hero image; the food photos are Karen's own phone shots, so
+they run small and uniformly cropped rather than full-bleed.
 
 ## Structure
 
@@ -32,9 +52,13 @@ public/            <- everything that gets deployed (Worker assets directory)
   sitemap.xml
   _headers         <- headers (security + caching)
   favicon.ico
-  assets/          <- images (logo, portrait, food photos)
-  fonts/           <- self-hosted Haskoy (body) + Rubik (headings) woff2
+  assets/          <- images (logo, food photos)
+  fonts/           <- self-hosted woff2: Playfair + Inter (/), Haskoy + Rubik (/original/)
 ```
+
+`assets/logo-mark.png` (376×379, 71 KB) is the web copy of the seal used on `/`;
+`assets/logo.png` (752×758, 825 KB) is the full-resolution master, referenced only
+from the JSON-LD.
 
 ## Local preview
 
@@ -69,5 +93,10 @@ checks and verify it there.
 
 ## Follow-ups
 
-- `public/assets/logo.png` is ~800 KB — re-export smaller / as WebP when tooling
-  is available.
+- The four food photos are 737×983 JPEGs (~150 KB each) but display around 260 px
+  wide in the photo strip. Re-export them at ~600 px / as WebP when image tooling is
+  available. They are lazy-loaded, so the initial page load is ~210 KB.
+- `public/assets/logo.png` (825 KB) is kept as the master. The site loads
+  `logo-mark.png` instead; re-export both as WebP when tooling allows.
+- Karen's portrait: drop it at `public/assets/karen.jpg` and follow the comment in
+  the "About Karen" section of `public/index.html`.
