@@ -235,21 +235,6 @@ p:last-child {
   font-size: 0.875rem;
 }
 
-/* ------------------------------------------------------------ preview ----- */
-
-.preview-bar {
-  background: var(--pine-deep);
-  color: #e8efe9;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-  text-align: center;
-  padding: 0.55rem 1rem;
-}
-
-.preview-bar a {
-  color: #fff;
-}
-
 /* ------------------------------------------------------------- header ----- */
 
 .masthead {
@@ -878,7 +863,6 @@ p:last-child {
 }
 
 @media print {
-  .preview-bar,
   .masthead,
   .nav-toggle {
     display: none;
